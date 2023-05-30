@@ -61,18 +61,14 @@ app.use('/api/v1/jobs', authenticateUser, jobsRouter);
 app.use('/api/v1/motor', motorRoutes);
 
 //////////////////////////////////////
-app.use((req, res, next) => {
-  res.setHeader(
-    'Content-Security-Policy',
-    "default-src 'self' http://qts.iitkgp.ac.in/last/gail/current/2000; other-directives..."
-  );
-  next();
-});
-app.use(cookieParser());
-app.use((req, res, next) => {
-  res.cookie('_cfuvid', 'cookie-value', { domain: 'https://gail-iitkgp-1.onrender.com/healthCard/123' });
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader(
+//     'Content-Security-Policy',
+//     "default-src 'self' http://qts.iitkgp.ac.in/last/gail/current/2000; other-directives..."
+//   );
+//   next();
+// });
+
 
 
 
